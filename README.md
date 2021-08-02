@@ -1,0 +1,17 @@
+# Counter Application
+
+**Version 0.0.1**
+
+Helps one keep track of counts. 
+
+May be useful in situations where one needs to keep track of data eg. number of cars that passed some checkpoint along a highway between between 8AM and 9AM.
+
+---
+## contributors
+
+[AllenOtto](https://www.instagram.com/netkingke/) 
+
+---
+## Licensing and Copyright
+
+©2021. AllenOtto, NetKing Kenya
