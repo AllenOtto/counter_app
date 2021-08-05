@@ -15,7 +15,12 @@ save_btn.addEventListener('click', () => {
     count = Number(counter_h1.innerHTML);
     tally = Number(totalTally_h2.innerHTML);
 
+    // Increment 'tally' with 'count' 
     tally += count;
+    
+    // Reset counter
     counter_h1.innerHTML = 0;
+
+    // Display Current Total Tally
     totalTally_h2.innerHTML = tally;
 });
