@@ -4,7 +4,7 @@
 
 Helps one keep count. 
 
-May be useful in situations where one needs to keep track of data eg. number of cars that passed some checkpoint along a highway between between, say, 8AM and 9AM.
+May be useful in situations where one needs to keep track of data eg. number of cars that passed some checkpoint along a highway between, say, 8AM and 9AM.
 
 ---
 
