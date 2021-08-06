@@ -23,6 +23,7 @@ h2 {
 }
 .header a {
   color: #fff;
+  transition: all ease 0.3s;
 }
 .header a:hover {
   color: orange;
