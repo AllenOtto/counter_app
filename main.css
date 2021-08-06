@@ -16,6 +16,17 @@ h1 {
 h2 {
   margin: 0.5rem;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+.header a {
+  color: #fff;
+}
+.header a:hover {
+  color: orange;
+}
 .btn-inc,
 .btn-save {
   text-decoration: none;
@@ -31,7 +42,8 @@ h2 {
   font-size: 1.2rem;
   transition: all ease 0.3s;
 }
-a:hover {
+.btn-inc:hover,
+.btn-save:hover {
   color: orange;
   border: 1px solid black;
 }
@@ -42,6 +54,7 @@ a:hover {
   text-align: center;
   width: 40%;
   border: 3px solid #fff;
+  border-radius: 5px;
   margin: 3rem auto;
 }
 .counter {
