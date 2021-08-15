@@ -14,31 +14,36 @@ increment_a.addEventListener("click", () => {
 
 // Save the value of the counter to the tally
 save_btn.addEventListener("click", () => {
-  // Cast strings as Integers for calculation and push 'count' into savedCounts array
-  var count = Number(counter_h1.innerHTML);
-  savedCounts.push(count);
-  console.log(savedCounts)
-  var tally = Number(totalTally_h2.innerHTML);
-  // Get tally of all elements in array
-  tally += count;
-  // Reset counter
-  counter_h1.innerHTML = 0;
-  // Display Current Total Tally
-  totalTally_h2.innerHTML = tally;
+
+// Cast strings as Integers for calculation and push 'count' into savedCounts array
+var count = Number(counter_h1.innerHTML);
+savedCounts.push(count);
+var tally = Number(totalTally_h2.innerHTML);
+// Get tally of all elements in array
+tally += count;
+// Reset counter
+counter_h1.innerHTML = 0;
+// Display Current Total Tally
+totalTally_h2.innerHTML = tally;
+  if (savedCounts.length > 0) {
   // Retrieves last item entered in list
-  console.log("Last Item in storage: " + savedCounts.slice(-1)[0]);
+  console.log("Items in Storage: " + savedCounts);
   // Shows number of additions to list so far
-  console.log("Number of elements in storage: " + savedCounts.length);
+  console.log("Units Counted So Far: " + savedCounts.length);
+  } else {
+  //
+  }
 });
 
 // Reset Tally Display
 reset_a.addEventListener("click", () => {
   if (Number(totalTally_h2.innerHTML > 0)) {
-    // Resets total tally
+    // Resets current total tally
     totalTally_h2.innerHTML = 0;
+    message_p.innerHTML = "Data Reset";
     // Empty the savedCounts data storage array
     // savedCounts.length = 0;
   } else {
-    console.log("No data");
+    message_p.innerHTML = "No Current Data";
   }
 });
