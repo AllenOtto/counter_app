@@ -26,6 +26,11 @@ h2 {
   border: 1px solid white;
   padding: 0.3rem;
   border-radius: 5px;
+  /* display: none; */
+}
+.message_visible {
+  display: block;
+  color: orange;
 }
 .message p {
   color: #fff;

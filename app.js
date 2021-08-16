@@ -29,20 +29,26 @@ save_btn.addEventListener("click", () => {
     cumulativeTotal += count;
     // Retrieves last item entered in list
     console.log("Total Cumulative Count: " + cumulativeTotal);
-    // Shows number of additions to list so far
-    console.log("Units Counted So Far: " + savedCounts.length);
+    // Shows number of additions to storage so far
+    console.log("Save Events So Far: " + savedCounts.length);
+    message_p.innerHTML = "^ " + count;
+    console.log(message_p.classList);
   }
 });
 
 // Reset Tally Display
 reset_a.addEventListener("click", () => {
-  if (Number(totalTally_h2.innerHTML > 0)) {
-    // Resets current total tally
-    totalTally_h2.innerHTML = 0;
-    message_p.innerHTML = "Data Reset";
-    // Empty the savedCounts data storage array
-    // savedCounts.length = 0;
-  } else {
-    message_p.innerHTML = "No Current Data";
+  function resetData() {
+    if (Number(totalTally_h2.innerHTML > 0)) {
+      // Resets current total tally
+      totalTally_h2.innerHTML = 0;
+      message_p.classList.toggle("message_visible");
+      message_p.innerHTML = "Data Reset";
+    } else {
+      message_p.innerHTML = "No Current Data";
+    }
   }
+
+  var timeId = setInterval(resetData(), 1000);
+  clearInterval(timeId);
 });
