@@ -3,7 +3,7 @@ const counter_h1 = document.querySelector(".counter");
 const increment_a = document.querySelector(".btn-inc");
 const save_btn = document.querySelector(".btn-save");
 const totalTally_h2 = document.querySelector(".totalTally");
-const reset_a = document.querySelector(".btn-reset");
+const reset_a = document.querySelector(".btn-refresh");
 const message_p = document.querySelector(".message p");
 var savedCounts = new Array();
 
