@@ -26,7 +26,7 @@ h2 {
   border: 1px solid white;
   padding: 0.3rem;
   border-radius: 5px;
-  /* display: none; */
+  display: none;
 }
 .message_visible {
   display: block;
