@@ -55,12 +55,17 @@ refresh_a.addEventListener("click", () => {
 
 report_view_i.addEventListener('click', () => {
   report_overlay_div.classList.add('show');
-  // Cumulative count
+  if (savedCounts.length < 1) {
+    console.log(message_p.innerText)
+    message_p.innerText = "Data Unavailable"
+  } else {
+    // Cumulative count
   count_h4.innerText = savedCounts.slice(-1)[0]
   // Number of tallies
   tally_h4.innerText = savedCounts.length
   // Items in storage
   items_h4.innerText = savedCounts
+  }
 })
 
 report_close_i.addEventListener('click', () => {
