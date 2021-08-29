@@ -75,10 +75,20 @@ h2 {
   margin: 3rem auto;
 }
 .report-overlay {
+  /* background-color: white;
+  color: black; */
+  padding: 0 1rem 1rem 1rem;
+  text-align: left;
+  width: 330px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  margin: 1rem auto;
   position: absolute;
-  margin: 0 auto;
   opacity: 0;
   pointer-events: none;
+}
+.report-overlay h4 {
+  padding: .2rem;
 }
 .report-overlay.show {
   opacity: 1;

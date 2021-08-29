@@ -9,6 +9,10 @@ const report_close_i = document.querySelector(".btn-report-close");
 const report_view_i = document.querySelector(".btn-report-view");
 const report_overlay_div = document.querySelector(".report-overlay");
 
+const count_h4 = document.querySelector(".count");
+const tally_h4 = document.querySelector(".tally");
+const items_h4 = document.querySelector(".items");
+
 var savedCounts = new Array();
 
 
@@ -51,6 +55,12 @@ refresh_a.addEventListener("click", () => {
 
 report_view_i.addEventListener('click', () => {
   report_overlay_div.classList.add('show');
+  // Cumulative count
+  count_h4.innerText = savedCounts.slice(-1)[0]
+  // Number of tallies
+  tally_h4.innerText = savedCounts.length
+  // Items in storage
+  items_h4.innerText = savedCounts
 })
 
 report_close_i.addEventListener('click', () => {
