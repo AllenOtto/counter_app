@@ -62,7 +62,11 @@ report_view_i.addEventListener('click', () => {
 
     setTimeout(() => {
       message_div.classList.remove('show')
-    }, 2000);
+    }, 5000);
+
+    setTimeout(() => {
+      report_overlay_div.classList.remove('show')
+    }, 6000)
 
   } else {
     // Cumulative count
