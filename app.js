@@ -5,8 +5,10 @@ const save_btn = document.querySelector(".btn-save");
 const totalTally_h2 = document.querySelector(".totalTally");
 const refresh_a = document.querySelector(".btn-refresh");
 const message_p = document.querySelector(".message p");
-const report_close_i = document.querySelector(".btn-close");
-const report_view_i = document.querySelector(".btn-report");
+const report_close_i = document.querySelector(".btn-report-close");
+const report_view_i = document.querySelector(".btn-report-view");
+const report_overlay_div = document.querySelector(".report-overlay");
+
 var savedCounts = new Array();
 
 
@@ -32,7 +34,7 @@ save_btn.addEventListener("click", () => {
   console.log("Current cululative count: " + savedCounts.slice(-1)[0]);
   // Shows number of additions to list so far
   console.log("Number of elements in storage: " + savedCounts.length);
-  console.log("Items in storage: " + savedCounts)
+  console.log("Items in storage: " + savedCounts);
 });
 
 // Reset Tally Display
@@ -47,6 +49,10 @@ refresh_a.addEventListener("click", () => {
   }
 });
 
+report_view_i.addEventListener('click', () => {
+  report_overlay_div.classList.add('show');
+})
+
 report_close_i.addEventListener('click', () => {
-  report-overlay.classList.add('hide');
+  report_overlay_div.classList.remove('show');
 });
