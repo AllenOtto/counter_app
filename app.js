@@ -8,7 +8,6 @@ const message_p = document.querySelector(".message p");
 const report_close_i = document.querySelector(".btn-close");
 const report_view_i = document.querySelector(".btn-report");
 var savedCounts = new Array();
-var persistent_storage = new Array();
 
 
 // Increment the counter on click
@@ -41,11 +40,8 @@ refresh_a.addEventListener("click", () => {
   if (Number(totalTally_h2.innerHTML > 0)) {
     // Resets total tally
     totalTally_h2.innerHTML = 0;
-    // Create a copy for persistence
-    persistent_storage.push(savedCounts.slice(-1)[0])
     // Empty the savedCounts data storage array
     savedCounts.length = 0;
-    console.log(persistent_storage)
   } else {
     console.log("No data");
   }
