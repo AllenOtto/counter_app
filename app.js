@@ -5,6 +5,7 @@ const save_btn = document.querySelector(".btn-save");
 const totalTally_h2 = document.querySelector(".totalTally");
 const refresh_a = document.querySelector(".btn-refresh");
 const message_p = document.querySelector(".message p");
+const message_div = document.querySelector(".message");
 const report_close_i = document.querySelector(".btn-report-close");
 const report_view_i = document.querySelector(".btn-report-view");
 const report_overlay_div = document.querySelector(".report-overlay");
@@ -55,9 +56,13 @@ refresh_a.addEventListener("click", () => {
 
 report_view_i.addEventListener('click', () => {
   report_overlay_div.classList.add('show');
+  message_div.classList.add('show')
   if (savedCounts.length < 1) {
-    console.log(message_p.innerText)
     message_p.innerText = "Data Unavailable"
+
+    setInterval(() => {
+      message_div.classList.remove('show')
+    }, 2000);
   } else {
     // Cumulative count
   count_h4.innerText = savedCounts.slice(-1)[0]

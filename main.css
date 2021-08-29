@@ -26,10 +26,11 @@ h2 {
   border: 1px solid white;
   padding: 0.3rem;
   border-radius: 5px;
-  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
 }
-.message_visible {
-  display: block;
+.message.show {
+  opacity: 1;
   color: orange;
 }
 .message p {
