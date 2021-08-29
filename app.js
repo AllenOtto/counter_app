@@ -3,9 +3,13 @@ const counter_h1 = document.querySelector(".counter");
 const increment_a = document.querySelector(".btn-inc");
 const save_btn = document.querySelector(".btn-save");
 const totalTally_h2 = document.querySelector(".totalTally");
-const reset_a = document.querySelector(".btn-refresh");
+const refresh_a = document.querySelector(".btn-refresh");
 const message_p = document.querySelector(".message p");
+const report_close_i = document.querySelector(".btn-close");
+const report_view_i = document.querySelector(".btn-report");
 var savedCounts = new Array();
+var persistent_storage = new Array();
+
 
 // Increment the counter on click
 increment_a.addEventListener("click", () => {
@@ -26,19 +30,27 @@ save_btn.addEventListener("click", () => {
   // Display Current Total Tally
   totalTally_h2.innerHTML = tally;
   // Retrieves last item entered in list
-  console.log("Last Item in storage: " + savedCounts.slice(-1)[0]);
+  console.log("Current cululative count: " + savedCounts.slice(-1)[0]);
   // Shows number of additions to list so far
   console.log("Number of elements in storage: " + savedCounts.length);
+  console.log("Items in storage: " + savedCounts)
 });
 
 // Reset Tally Display
-reset_a.addEventListener("click", () => {
+refresh_a.addEventListener("click", () => {
   if (Number(totalTally_h2.innerHTML > 0)) {
     // Resets total tally
     totalTally_h2.innerHTML = 0;
+    // Create a copy for persistence
+    persistent_storage.push(savedCounts.slice(-1)[0])
     // Empty the savedCounts data storage array
     savedCounts.length = 0;
+    console.log(persistent_storage)
   } else {
     console.log("No data");
   }
+});
+
+report_close_i.addEventListener('click', () => {
+  report-overlay.classList.add('hide');
 });

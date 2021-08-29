@@ -26,7 +26,7 @@ h2 {
   border: 1px solid white;
   padding: 0.3rem;
   border-radius: 5px;
-  display: none;
+  /* display: none; */
 }
 .message_visible {
   display: block;
@@ -69,7 +69,7 @@ h2 {
 .badge {
   position: relative;
   text-align: center;
-  width: 40%;
+  width: 35%;
   border: 3px solid #fff;
   border-radius: 5px;
   margin: 3rem auto;
@@ -78,11 +78,17 @@ h2 {
   position: absolute;
   margin: 0 auto;
 }
+.report-overlay.hide {
+  opacity: 0;
+}
 .report-header {
-  transition: all ease .3s;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.report-header a {
+  color: white;
+  transition: all ease .3s;
 }
 .report-header a:hover {
   color: orange;
