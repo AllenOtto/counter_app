@@ -60,9 +60,10 @@ report_view_i.addEventListener('click', () => {
   if (savedCounts.length < 1) {
     message_p.innerText = "Data Unavailable"
 
-    setInterval(() => {
+    setTimeout(() => {
       message_div.classList.remove('show')
     }, 2000);
+
   } else {
     // Cumulative count
   count_h4.innerText = savedCounts.slice(-1)[0]
