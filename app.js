@@ -56,8 +56,8 @@ refresh_a.addEventListener("click", () => {
 
 report_view_i.addEventListener('click', () => {
   report_overlay_div.classList.add('show');
-  message_div.classList.add('show')
   if (savedCounts.length < 1) {
+    message_div.classList.add('show')
     message_p.innerText = "Data Unavailable"
 
     setTimeout(() => {
