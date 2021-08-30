@@ -29,7 +29,7 @@ save_btn.addEventListener("click", () => {
     message_p.innerText = "Increment First"
     setTimeout(() => {
       message_div.classList.remove('show')
-    }, 3000)
+    }, 2000)
 
   } else {
   // Cast strings as Integers for calculation
@@ -61,21 +61,28 @@ refresh_a.addEventListener("click", () => {
     // Items in storage
     items_h4.innerText = 0
     
-    // Show report only briefly then remove it 
+    // Show report only briefly then remove it
+    message_div.classList.add('show')
+    message_p.innerText = 'Storage Emptied'
     report_overlay_div.classList.add('show')
     setTimeout(() => {
+      message_div.classList.remove('show')
       report_overlay_div.classList.remove('show')
     }, 4000)
 
   } else {
-    console.log("No data");
+    message_div.classList.add('show')
+    message_p.innerText = "Sparkling Clean"
+    setTimeout(() => {
+      message_div.classList.remove('show')
+    }, 2000)
   }
 });
 
 report_view_i.addEventListener('click', () => {
   if (savedCounts.length < 1) {
     message_div.classList.add('show')
-    message_p.innerText = "Data Unavailable"
+    message_p.innerText = "No Data"
 
     setTimeout(() => {
       message_div.classList.remove('show')
