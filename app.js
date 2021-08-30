@@ -32,6 +32,7 @@ save_btn.addEventListener("click", () => {
     }, 2000)
 
   } else {
+    report_overlay_div.classList.remove('show')
   // Cast strings as Integers for calculation
   var count = Number(counter_h1.innerHTML);
   var tally = Number(totalTally_h2.innerHTML);
@@ -96,7 +97,7 @@ report_view_i.addEventListener('click', () => {
   // Number of tallies
   tally_h4.innerText = savedCounts.length
   // Items in storage
-  items_h4.innerText = savedCounts
+  items_h4.innerText = savedCounts.slice(-3)
   }
 })
 // Remove report overlay on close_button click
