@@ -25,7 +25,15 @@ increment_a.addEventListener("click", () => {
 
 // Decrement the counter on click
 decrement_a.addEventListener("click", () => {
-  counter_h1.innerText--;
+  if (Number(counter_h1.innerText) < 1) {
+    message_div.classList.add('show')
+    message_p.innerText = "Can't be Negative"
+    setTimeout(() => {
+      message_div.classList.remove('show')
+    }, 2000)
+  } else {
+    counter_h1.innerText--;
+  }
 });
 
 // Save the value of the counter to the tally
