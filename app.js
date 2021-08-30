@@ -72,7 +72,7 @@ refresh_a.addEventListener("click", () => {
 
   } else {
     message_div.classList.add('show')
-    message_p.innerText = "Sparkling Clean"
+    message_p.innerText = "No Data in Storage"
     setTimeout(() => {
       message_div.classList.remove('show')
     }, 2000)
@@ -80,9 +80,10 @@ refresh_a.addEventListener("click", () => {
 });
 
 report_view_i.addEventListener('click', () => {
+  // If there is no data to be reset tell user
   if (savedCounts.length < 1) {
     message_div.classList.add('show')
-    message_p.innerText = "No Data"
+    message_p.innerText = "No Data in Storage"
 
     setTimeout(() => {
       message_div.classList.remove('show')
