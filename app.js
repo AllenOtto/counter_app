@@ -99,7 +99,7 @@ report_view_i.addEventListener('click', () => {
   items_h4.innerText = savedCounts
   }
 })
-
+// Remove report overlay on close_button click
 report_close_i.addEventListener('click', () => {
   report_overlay_div.classList.remove('show');
 });
