@@ -24,6 +24,14 @@ increment_a.addEventListener("click", () => {
 
 // Save the value of the counter to the tally
 save_btn.addEventListener("click", () => {
+  if (Number(counter_h1.innerText) < 1) {
+    message_div.classList.add('show')
+    message_p.innerText = "Increment First"
+    setTimeout(() => {
+      message_div.classList.remove('show')
+    }, 3000)
+
+  } else {
   // Cast strings as Integers for calculation
   var count = Number(counter_h1.innerHTML);
   var tally = Number(totalTally_h2.innerHTML);
@@ -35,11 +43,7 @@ save_btn.addEventListener("click", () => {
   counter_h1.innerHTML = 0;
   // Display Current Total Tally
   totalTally_h2.innerHTML = tally;
-  // Retrieves last item entered in list
-  console.log("Current cululative count: " + savedCounts.slice(-1)[0]);
-  // Shows number of additions to list so far
-  console.log("Number of elements in storage: " + savedCounts.length);
-  console.log("Items in storage: " + savedCounts);
+  }
 });
 
 // Reset Tally Display
@@ -55,21 +59,17 @@ refresh_a.addEventListener("click", () => {
 });
 
 report_view_i.addEventListener('click', () => {
-  report_overlay_div.classList.add('show');
   if (savedCounts.length < 1) {
     message_div.classList.add('show')
     message_p.innerText = "Data Unavailable"
 
     setTimeout(() => {
       message_div.classList.remove('show')
-    }, 5000);
-
-    setTimeout(() => {
-      report_overlay_div.classList.remove('show')
-    }, 6000)
+    }, 2000);
 
   } else {
-    // Cumulative count
+  report_overlay_div.classList.add('show');
+  // Cumulative count
   count_h4.innerText = savedCounts.slice(-1)[0]
   // Number of tallies
   tally_h4.innerText = savedCounts.length
