@@ -1,6 +1,7 @@
 // Cache the DOM
 const counter_h1 = document.querySelector(".counter");
 const increment_a = document.querySelector(".btn-inc");
+const decrement_a = document.querySelector(".btn-dec");
 const save_btn = document.querySelector(".btn-save");
 const totalTally_h2 = document.querySelector(".totalTally");
 const refresh_a = document.querySelector(".btn-refresh");
@@ -19,7 +20,12 @@ var savedCounts = new Array();
 
 // Increment the counter on click
 increment_a.addEventListener("click", () => {
-  counter_h1.innerHTML++;
+  counter_h1.innerText++;
+});
+
+// Decrement the counter on click
+decrement_a.addEventListener("click", () => {
+  counter_h1.innerText--;
 });
 
 // Save the value of the counter to the tally
