@@ -53,6 +53,20 @@ refresh_a.addEventListener("click", () => {
     totalTally_h2.innerHTML = 0;
     // Empty the savedCounts data storage array
     savedCounts.length = 0;
+    
+    // Cumulative count
+    count_h4.innerText = 0
+    // Number of tallies
+    tally_h4.innerText = 0
+    // Items in storage
+    items_h4.innerText = 0
+    
+    // Show report only briefly then remove it 
+    report_overlay_div.classList.add('show')
+    setTimeout(() => {
+      report_overlay_div.classList.remove('show')
+    }, 4000)
+
   } else {
     console.log("No data");
   }
