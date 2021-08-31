@@ -20,27 +20,27 @@ var savedCounts = new Array();
 
 // Increment the counter on click
 increment_a.addEventListener("click", () => {
-  counter_h1.innerText++;
+  counter_h1.textContent++;
 });
 
 // Decrement the counter on click
 decrement_a.addEventListener("click", () => {
-  if (Number(counter_h1.innerText) < 1) {
+  if (Number(counter_h1.textContent) < 1) {
     message_div.classList.add('show')
-    message_p.innerText = "Can't be Negative"
+    message_p.textContent = "Can't be Negative"
     setTimeout(() => {
       message_div.classList.remove('show')
     }, 2000)
   } else {
-    counter_h1.innerText--;
+    counter_h1.textContent--;
   }
 });
 
 // Save the value of the counter to the tally
 save_btn.addEventListener("click", () => {
-  if (Number(counter_h1.innerText) < 1) {
+  if (Number(counter_h1.textContent) < 1) {
     message_div.classList.add('show')
-    message_p.innerText = "Increment First"
+    message_p.textContent = "Increment First"
     setTimeout(() => {
       message_div.classList.remove('show')
     }, 2000)
@@ -48,37 +48,37 @@ save_btn.addEventListener("click", () => {
   } else {
     report_overlay_div.classList.remove('show')
   // Cast strings as Integers for calculation
-  var count = Number(counter_h1.innerHTML);
-  var tally = Number(totalTally_h2.innerHTML);
+  var count = Number(counter_h1.textContent);
+  var tally = Number(totalTally_h2.textContent);
   // Increment 'tally' with 'count'
   tally += count;
   // Pushes tally to storage
   savedCounts.push(tally);
   // Reset counter
-  counter_h1.innerHTML = 0;
+  counter_h1.textContent = 0;
   // Display Current Total Tally
-  totalTally_h2.innerHTML = tally;
+  totalTally_h2.textContent = tally;
   }
 });
 
 // Reset Tally Display
 refresh_a.addEventListener("click", () => {
-  if (Number(totalTally_h2.innerHTML > 0)) {
+  if (Number(totalTally_h2.textContent > 0)) {
     // Resets total tally
-    totalTally_h2.innerHTML = 0;
+    totalTally_h2.textContent = 0;
     // Empty the savedCounts data storage array
     savedCounts.length = 0;
     
     // Cumulative count
-    count_h4.innerText = 0
+    count_h4.textContent = 0
     // Number of tallies
-    tally_h4.innerText = 0
+    tally_h4.textContent = 0
     // Items in storage
-    items_h4.innerText = 0
+    items_h4.textContent = 0
     
     // Show report only briefly then remove it
     message_div.classList.add('show')
-    message_p.innerText = 'Storage Emptied'
+    message_p.textContent = 'Storage Emptied'
     report_overlay_div.classList.add('show')
     setTimeout(() => {
       message_div.classList.remove('show')
@@ -87,7 +87,7 @@ refresh_a.addEventListener("click", () => {
 
   } else {
     message_div.classList.add('show')
-    message_p.innerText = "No Data in Storage"
+    message_p.textContent = "No Data in Storage"
     setTimeout(() => {
       message_div.classList.remove('show')
     }, 2000)
@@ -98,7 +98,7 @@ report_view_i.addEventListener('click', () => {
   // If there is no data to be reset tell user
   if (savedCounts.length < 1) {
     message_div.classList.add('show')
-    message_p.innerText = "No Data in Storage"
+    message_p.textContent = "No Data in Storage"
 
     setTimeout(() => {
       message_div.classList.remove('show')
@@ -107,11 +107,11 @@ report_view_i.addEventListener('click', () => {
   } else {
   report_overlay_div.classList.add('show');
   // Cumulative count
-  count_h4.innerText = savedCounts.slice(-1)[0]
+  count_h4.textContent = savedCounts.slice(-1)[0]
   // Number of tallies
-  tally_h4.innerText = savedCounts.length
+  tally_h4.textContent = savedCounts.length
   // Items in storage
-  items_h4.innerText = savedCounts.slice(-3)
+  items_h4.textContent = savedCounts.slice(-3)
   }
 })
 // Remove report overlay on close_button click
